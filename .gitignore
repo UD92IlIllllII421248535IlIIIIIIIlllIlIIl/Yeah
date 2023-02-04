@@ -888,6 +888,15 @@ function Library:create(options)
 		end,
 	}
 
+	settingsTab:toggle{
+		Name = "Anti Cheat Bypass",
+		Description = "Bypasses",
+		StartingState = true,
+		Callback = function(state)
+			Library.LockDragging = state
+		end,
+	}
+
 	local creditsTab = Library.tab(mt, {
 		Name = "Credits",
 		Internal = creditsTabIcon,
