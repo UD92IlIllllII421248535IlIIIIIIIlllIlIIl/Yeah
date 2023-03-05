@@ -666,7 +666,7 @@ function Library:create(options)
 		BackgroundTransparency = 1,
 		Position = UDim2.new(0, 5, 0.5, 0),
 		Size = UDim2.new(0, 15, 0, 15),
-		Image = "http://www.roblox.com/asset/?id=8569322835",
+		Image = "http://www.roblox.com/asset/?id=5013109572",
 		Theme = {ImageColor3 = "StrongText"}
 	})
 
@@ -888,15 +888,6 @@ function Library:create(options)
 		end,
 	}
 
-	settingsTab:toggle{
-		Name = "Anti Cheat Bypass",
-		Description = "Bypasses",
-		StartingState = true,
-		Callback = function(state)
-			Library.LockDragging = state
-		end,
-	}
-
 	local creditsTab = Library.tab(mt, {
 		Name = "Credits",
 		Internal = creditsTabIcon,
@@ -904,6 +895,13 @@ function Library:create(options)
 	})
 
 	rawset(mt, "creditsContainer", creditsTab.container)
+
+	creditsTab:credit{Name = "Reggie", Description = "Owner of Going Rogue", Discord = "Reggie#9934"}
+	creditsTab:credit{Name = "elrandom", Description = "Co-Owner", Discord = "elrandom#1311"}
+	creditsTab:credit{Name = "Reggie", Description = "Head Developer", Discord = "ReggiePro124#8584"}
+	creditsTab:credit{Name = "Basically_Leo", Description = "Admin", Discord = "Basically_Leo#7083"}
+	creditsTab:credit{Name = "Atari", Description = "Admin", Discord = "atari#0001"}
+	creditsTab:credit{Name = "Dom", Description = "Admin", Discord = "Dom.mp3#0001"}
 
 	return mt
 end
@@ -1053,7 +1051,7 @@ end
 function Library:tab(options)
 	options = self:set_defaults({
 		Name = "New Tab",
-		Icon = "rbxassetid://12626133575"
+		Icon = "rbxassetid://5013109572"
 	}, options)
 
 	local tab = self.container:object("ScrollingFrame", {
